@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Nutty’s Boba Poll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #f7c6c7;
+            padding: 10px;
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        header h1 {
+            margin-left: 20px;
+            font-size: 3em;
+            color: #5c2a9d;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #5c2a9d;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 1.2em;
+        }
+        input[type="checkbox"], input[type="text"] {
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #5c2a9d;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4a207b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="boba-image.png" alt="Big Nutty's Boba Logo">
+        <h1>Big Nutty’s Boba</h1>
+    </header>
+
+    <section>
+        <h2>Poll</h2>
+
+        <form action="submit_poll.html" method="post">
+            <h3>What flavors are your favorite?</h3>
+            <label><input type="checkbox" name="favorite_flavors" value="Big Nutty's Surprise Boba"> Big Nutty's Surprise Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Blueberry Boba"> Blueberry Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Brown Sugar Boba"> Brown Sugar Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Caramel Boba"> Caramel Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Classic Milk Boba"> Classic Milk Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Coconut Boba"> Coconut Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Coffee Boba"> Coffee Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Cream Soda Boba"> Cream Soda Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Honeydew Boba"> Honeydew Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Mango Boba"> Mango Boba</label><br>
+            <label><input type="checkbox" name="favorite_flavors" value="Pineapple Boba"> Pineapple Boba</label><br>
+            <h3>What new flavors do you want?</h3>
+            <label for="new_flavors">Your suggestions:</label><br>
+            <input type="text" id="new_flavors" name="new_flavors" placeholder="Type here..."><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</body>
+</html>
