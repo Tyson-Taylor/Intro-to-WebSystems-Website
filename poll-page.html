@@ -4,18 +4,20 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ESS9TG19Z"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9ESS9TG19Z');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9ESS9TG19Z');
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to Big Nutty’s Boba, your go-to boba shop in Columbia, SC, offering a variety of unique flavors and weekly specials.">
     <meta name="keywords" content="boba, tea, drinks, flavors, Columbia SC, Big Nutty's Boba, weekly special, order boba">
     <meta name="author" content="Big Nutty’s Boba Team">
     <title>Big Nutty’s Boba Poll</title>
-    <link rel="stylesheet" href="styles.css"> <!-- external stylesheet -->
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -23,11 +25,17 @@
         <img src="boba-image.png" alt="Big Nutty's Boba Logo">
         <h1>Big Nutty’s Boba</h1>
     </header>
-
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="careers-page.html">Careers</a></li>
+            <li><a href="poll-page.html">Poll</a></li>
+        </ul>
+    </nav>
     <section>
         <h2>Poll</h2>
 
-        <form action="submit_poll.html" method="post">
+        <form action="submit_poll.html" method="get" id="bobaPollForm">
             <h3>What flavors are your favorite?</h3>
             <label><input type="checkbox" name="favorite_flavors" value="Big Nutty's Surprise Boba"> Big Nutty's Surprise Boba</label><br>
             <label><input type="checkbox" name="favorite_flavors" value="Blueberry Boba"> Blueberry Boba</label><br>
@@ -47,6 +55,28 @@
             <input type="submit" value="Submit">
         </form>
     </section>
+
+    <script>
+        function validateForm(event) {
+            const checkboxes = document.querySelectorAll('input[name="favorite_flavors"]:checked');
+            const newFlavors = document.getElementById('new_flavors').value;
+
+            if (checkboxes.length === 0) {
+                alert("Please select at least one flavor.");
+                event.preventDefault();
+                return false;
+            }
+
+            if (newFlavors.trim() === "") {
+                alert("Please enter a suggestion for new flavors.");
+                event.preventDefault();
+                return false;
+            }
+
+            return true;
+        }
+        document.getElementById("bobaPollForm").addEventListener("submit", validateForm);
+    </script>
 
 </body>
 </html>
